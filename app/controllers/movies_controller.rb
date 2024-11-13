@@ -38,4 +38,8 @@ class MoviesController < ApplicationController
     the_movie.destroy
     redirect_to("/movies")
   end
+
+  def update
+
+  end
 end
