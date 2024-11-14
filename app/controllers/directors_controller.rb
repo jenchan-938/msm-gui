@@ -65,7 +65,7 @@ class DirectorsController < ApplicationController
     director.dob=params.fetch("dob")
     director.image=params.fetch("image")
     director.save
-    redirect_to("/directors/#{director.id}")
+    redirect_to("/directors/#{director.id}") #lowercase because online 62 made a variable director which is one record from the table 
 
   end
 end

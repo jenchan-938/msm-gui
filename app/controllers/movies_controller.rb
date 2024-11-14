@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
     m.director_id=params.fetch("director_id")
     m.save
 
-    redirector_to("/movies")
+    redirect_to("/movies")
    
   end
 
