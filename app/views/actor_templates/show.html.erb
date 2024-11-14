@@ -6,6 +6,8 @@
   Go back
 </a>
 
+<div> <a href = "/delete_actor/<%=@the_actor.id%>" >Delete actor </a> </div>
+
 <hr>
 
 <dl>
@@ -88,6 +90,10 @@
     <% matching_movies = Movie.where({ :id => m_id }) %>
 
     <% the_movie = matching_movies.at(0) %>
+    <%if the_movie==nil%>
+    No movie found
+
+    <% else %>
 
     <tr>
       <td>
@@ -119,4 +125,5 @@
       </td>
     </tr>
   <% end %>
+  <% end%>
 </table>

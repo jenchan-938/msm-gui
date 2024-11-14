@@ -14,4 +14,22 @@ class ActorsController < ApplicationController
       
     render({ :template => "actor_templates/show" })
   end
+
+  def create
+    a=Actor.new
+    a.name=params.fetch("name")
+    a.dob=params.fetch("dob")
+    a.bio=params.fetch("bio")
+    a.image=params.fetch("image")
+    a.save
+    redirect_to("/actors")
+  end
+
+  def delete
+    the_id=params.fetch("an_id")
+    matching_record=Actor.where({:id => the_id})
+    the_actor=matching_record.at(0)
+    the_actor.destroy
+    redirect_to("/actors")
+  end
 end
