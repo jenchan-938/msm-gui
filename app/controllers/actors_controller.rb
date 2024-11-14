@@ -32,4 +32,17 @@ class ActorsController < ApplicationController
     the_actor.destroy
     redirect_to("/actors")
   end
+
+  def update
+    a_id=params.fetch("the_id")
+    matching_record=Actor.where({:id => a_id})
+    the_actor=matching_record.at(0)
+    the_actor.name=params.fetch("name")
+    the_actor.dob=params.fetch("dob")
+    the_actor.bio=params.fetch("bio")
+    the_actor.image=params.fetch("image")
+    the_actor.save
+    redirect_to("/actors/#{the_actor.id}")
+
+  end
 end
