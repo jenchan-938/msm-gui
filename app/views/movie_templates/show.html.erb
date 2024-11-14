@@ -12,35 +12,35 @@
 </div>
 <hr>
 
-<form action = "/modify_movie_record/<%=@themovie.id%> " method = "post">
+<form action = "/modify_movie_record/<%=@the_movie.id%>" method = "post">
   <div>
     <label for = "title ">Title </label>
-    <input id ="title" name = "title" type = "text">
+    <input id ="title" name = "title" type = "text" value="<%=@the_movie.title%>">
   </div>
   
   <div>
     <label for = "year ">Year </label>
-    <input id ="year" name = "year" type = "text">
+    <input id ="year" name = "year" type = "text" value="<%=@the_movie.year%>">
   </div>
   
   <div>
     <label for = "duration ">Duration </label>
-    <input id ="duration" name = "duration" type = "text">
+    <input id ="duration" name = "duration" type = "text" value="<%=@the_movie.duration%>">
   </div>
   
   <div>
     <label for = "description ">Description </label>
-    <input id ="description" name = "description" type = "text">
+    <input id ="description" name = "description" type = "text" value="<%=@the_movie.description%>">
   </div>
   
   <div>
     <label for = "image ">Image </label>
-    <input id ="image" name = "image" type = "text">
+    <input id ="image" name = "image" type = "text" value="<%=@the_movie.image%>">
   </div>
   
   <div>
     <label for = "director_id ">Director ID </label>
-    <input id ="director_id" name = "director_id" type = "text">
+    <input id ="director_id" name = "director_id" type = "text" value="<%=@the_movie.title%>">
   </div>
 
   <div>
@@ -97,7 +97,12 @@
     <% the_director = matching_directors.at(0) %>
 
   
-    <%= the_director.name %>
+   <% if the_director == nil%>
+         Uh oh! We weren't able to find a director in the movie.
+        <%else%>
+        <%= the_director.name %>
+        <%end%>
+   
  
    
   </dd>
