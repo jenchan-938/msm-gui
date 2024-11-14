@@ -65,7 +65,7 @@ class DirectorsController < ApplicationController
     director.dob=params.fetch("dob")
     director.image=params.fetch("image")
     director.save
-    redirect_to("/directors/#{the_director.id}")
+    redirect_to("/directors/#{director.id}")
 
   end
 end
