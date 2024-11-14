@@ -10,6 +10,33 @@
 
 <hr>
 
+<form action ="/modify_actor_record/<%=@the_actor.id%>" method="post">
+  <div>
+    <label for ="name"> Name </label>
+    <input id ="name" name="name" type = "text" value ="<%=@the_actor.name%>">
+  </div>
+ 
+  <div>
+    <label for ="dob"> Dob</label>
+    <input id ="dob" name="dob" type = "text" value ="<%=@the_actor.dob%>">
+  </div>
+
+  <div>
+    <label for ="bio"> Bio </label>
+    <input id ="bio" name="bio" type = "text" value ="<%=@the_actor.bio%>">
+  </div>
+ 
+  <div>
+    <label for ="image"> Image </label>
+    <input id ="image" name="image" type = "text" value ="<%=@the_actor.image%>">
+  </div>
+
+  <div>
+    <button>Update actor </button>
+  </div>
+</form>
+
+<hr>
 <dl>
   <dt>
     Name
